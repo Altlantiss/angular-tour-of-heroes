@@ -9,12 +9,14 @@ import { HeroService } from './hero.service';
 import { HeroDetailComponent } from './hero-detail.component';
 
 import { RouterModule } from '@angular/router';
+import {DashboardComponent} from './dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,19 @@ import { RouterModule } from '@angular/router';
       {
         path: 'heroes',
         component: HeroesComponent,
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+      {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'detail/:id',
+        component: HeroDetailComponent
       },
     ])
   ],
